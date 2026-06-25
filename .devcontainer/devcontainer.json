@@ -1,0 +1,20 @@
+{
+  "name": "Windows Cloud Desktop",
+  "image": "dockur/windows:latest",
+  "runArgs": [
+    "--device=/dev/kvm",
+    "--cap-add=NET_ADMIN"
+  ],
+  "forwardPorts": [8006],
+  "portsAttributes": {
+    "8006": {
+      "label": "Windows Desktop Screen",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": []
+    }
+  }
+}
